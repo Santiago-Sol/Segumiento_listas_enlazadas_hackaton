@@ -37,6 +37,31 @@ public class ListaDobleSimple<T extends Comparable<T>> implements Iterable<T> {
         tamano++;
     }
 
+    public void agregarEnIndice(int indice, T dato) {
+        if (indice < 0 || indice > tamano) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+        if (indice == 0) {
+            agregarInicio(dato);
+            return;
+        }
+        if (indice == tamano) {
+            agregarFinal(dato);
+            return;
+        }
+        NodoDoble<T> nuevo = new NodoDoble<>(dato);
+        NodoDoble<T> actual = primero;
+        for (int i = 0; i < indice; i++) {
+            actual = actual.getSiguiente();
+        }
+        NodoDoble<T> anterior = actual.getAnterior();
+        anterior.setSiguiente(nuevo);
+        nuevo.setAnterior(anterior);
+        nuevo.setSiguiente(actual);
+        actual.setAnterior(nuevo);
+        tamano++;
+    }
+
     public boolean eliminar(T dato) {
         NodoDoble<T> actual = primero;
         while (actual != null) {

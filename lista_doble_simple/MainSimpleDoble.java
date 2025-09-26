@@ -9,6 +9,7 @@ public class MainSimpleDoble {
         lista.agregarInicio("dos");
         lista.agregarInicio("tres");
         lista.agregarInicio("cuatro");
+        lista.agregarEnIndice(0, "cien");
 
         lista.mostrar();
     }
