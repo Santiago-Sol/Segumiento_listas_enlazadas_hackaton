@@ -43,10 +43,12 @@ public class ListaDobleSimple<T extends Comparable<T>> implements Iterable<T> {
             if (actual.getDato().equals(dato)) {
                 if (actual == primero) {
                     primero = actual.getSiguiente();
-                    if (primero != null) primero.setAnterior(null);
+                    if (primero != null)
+                        primero.setAnterior(null);
                 } else if (actual == ultimo) {
                     ultimo = actual.getAnterior();
-                    if (ultimo != null) ultimo.setSiguiente(null);
+                    if (ultimo != null)
+                        ultimo.setSiguiente(null);
                 } else {
                     actual.getAnterior().setSiguiente(actual.getSiguiente());
                     actual.getSiguiente().setAnterior(actual.getAnterior());
@@ -62,7 +64,11 @@ public class ListaDobleSimple<T extends Comparable<T>> implements Iterable<T> {
     public void mostrar() {
         NodoDoble<T> actual = primero;
         while (actual != null) {
-            System.out.println(actual.getDato());
+            T anterior = (actual.getAnterior() != null) ? actual.getAnterior().getDato() : null;
+            T siguiente = (actual.getSiguiente() != null) ? actual.getSiguiente().getDato() : null;
+            System.out.println("Dato: " + actual.getDato() +
+                    " | Anterior: " + anterior +
+                    " | Siguiente: " + siguiente);
             actual = actual.getSiguiente();
         }
     }

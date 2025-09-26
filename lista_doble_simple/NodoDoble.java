@@ -29,5 +29,13 @@ public class NodoDoble<T> {
 
     public void setAnterior(NodoDoble<T> anterior) {
         this.anterior = anterior;
+
     }
+
+    @Override
+    public String toString() {
+        return "NodoDoble [dato=" + dato + ", siguiente=" + siguiente + ", anterior=" + anterior + "]";
+    }
+
+    
 }
