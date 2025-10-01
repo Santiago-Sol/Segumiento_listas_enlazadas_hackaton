@@ -1,4 +1,4 @@
-package lista_doble_simple;
+
 
 import java.util.Iterator;
 

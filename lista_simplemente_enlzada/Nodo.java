@@ -1,4 +1,4 @@
-package lista_simplemente_enlzada;
+
 
 public class Nodo<T>  {
     private T dato;

@@ -1,4 +1,4 @@
-package lista_doble_simple;
+
 
 public class NodoDoble<T> {
     private T dato;
