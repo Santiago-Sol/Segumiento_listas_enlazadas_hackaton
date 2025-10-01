@@ -70,13 +70,13 @@ public class ListaSimpleEnlazada<T extends Comparable<T>> implements Iterable<T>
         tamano++;
     }
 
-    public void agregarEn(Nodo nuevo, int indice) {
+    public void agregarEn(Nodo<T> nuevo, int indice) {
         if (indice == 0) {
             agregarPrimero(nuevo);
             return;
         }
 
-        Nodo actual = primero;
+        Nodo<T> actual = primero;
         int contador = 0;
 
         while (actual != null & contador < indice - 1) {
