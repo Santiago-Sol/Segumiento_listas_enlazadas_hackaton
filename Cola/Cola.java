@@ -12,7 +12,7 @@ public class Cola<T>{
         this.fin = null;
         this.tamano = 0;
     }
-    
+
     public Nodo<T> getFrente() {
         return frente;
     }
@@ -32,7 +32,26 @@ public class Cola<T>{
         this.tamano = tamano;
     }
 
-    
+    public void encolar(Nodo<T> nuevoNodo){
+        if (this.tamano == 0){
+            this.frente = nuevoNodo;
+            this.fin = nuevoNodo;
+        } else {
+            this.fin.setSiguiente(nuevoNodo);
+            this.fin = nuevoNodo;
+        }
+        this.tamano++;
+        
+    }
 
- 
+    
+    public void desencolar(){
+        if (this.tamano == 0){
+            System.out.println("la cola esta vacia");
+        }
+        else {
+            this.fin = this.frente.getSiguiente();
+            this.tamano--;
+        }
+    }
 }
