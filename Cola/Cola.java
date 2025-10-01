@@ -35,7 +35,7 @@ public class Cola<T>{
     public void encolar(Nodo<T> nuevoNodo){
         if (this.tamano == 0){
             this.frente = nuevoNodo;
-            this.fin = null;
+            this.fin = nuevoNodo;
             System.out.println("cola vacia, se agrego el nodo");
         } else {
             this.fin.setSiguiente(nuevoNodo);
@@ -48,13 +48,13 @@ public class Cola<T>{
 
     
     public void desencolar(){
-        if (this.tamano == 0){
-            System.out.println("la cola esta vacia");
+        if (frente == null){
+            return;
         }
-        else {
-            this.fin = null;
-            this.tamano--;
-            System.out.println("se elimino el nodo");
-        }
+
+        Nodo<T> temp = frente;
+        frente = frente.getSiguiente();
+        tamano--;
+        System.out.println("se desencolo el nodo: " + temp.getDato());
     }
 }
