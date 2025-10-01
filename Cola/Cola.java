@@ -35,10 +35,12 @@ public class Cola<T>{
     public void encolar(Nodo<T> nuevoNodo){
         if (this.tamano == 0){
             this.frente = nuevoNodo;
-            this.fin = nuevoNodo;
+            this.fin = null;
+            System.out.println("cola vacia, se agrego el nodo");
         } else {
             this.fin.setSiguiente(nuevoNodo);
             this.fin = nuevoNodo;
+            System.out.println("cola con elementos, se agrego el nodo");
         }
         this.tamano++;
         
@@ -50,8 +52,9 @@ public class Cola<T>{
             System.out.println("la cola esta vacia");
         }
         else {
-            this.fin = this.frente.getSiguiente();
+            this.fin = null;
             this.tamano--;
+            System.out.println("se elimino el nodo");
         }
     }
 }
