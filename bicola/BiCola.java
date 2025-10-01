@@ -1,5 +1,7 @@
 import java.util.Iterator;
 
+import Pila.Nodo;
+
 public class BiCola<T>{
     private Nodo<T> frente;
     private Nodo<T> fin;

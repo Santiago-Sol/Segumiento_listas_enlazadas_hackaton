@@ -2,6 +2,8 @@
 
 import java.util.Iterator;
 
+import Pila.Nodo;
+
 public class ListaSimpleEnlazada<T extends Comparable<T>> implements Iterable<T> {
     private Nodo<T> primero;
 
