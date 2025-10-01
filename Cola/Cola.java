@@ -4,6 +4,15 @@ public class Cola<T>{
     private Nodo<T> frente;
     private Nodo<T> fin;
     private int tamano;
+
+    
+
+    public Cola() {
+        this.frente = null;
+        this.fin = null;
+        this.tamano = 0;
+    }
+    
     public Nodo<T> getFrente() {
         return frente;
     }
