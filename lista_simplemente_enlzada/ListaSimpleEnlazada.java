@@ -1,8 +1,6 @@
-
+package lista_simplemente_enlzada;
 
 import java.util.Iterator;
-
-import Pila.Nodo;
 
 public class ListaSimpleEnlazada<T extends Comparable<T>> implements Iterable<T> {
     private Nodo<T> primero;

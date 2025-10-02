@@ -1,5 +1,4 @@
-import Pila.Nodo;
-
+package lista_simplemente_enlzada;
 public class MainListas {
 
     public static void main(String[] args) {

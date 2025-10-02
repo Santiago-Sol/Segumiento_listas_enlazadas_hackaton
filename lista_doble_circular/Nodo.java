@@ -1,14 +1,23 @@
-package lista_simplemente_enlzada;
+package lista_doble_circular;
 
-public class Nodo<T>  {
+public class Nodo<T> {
     private T dato;
     private Nodo<T> siguiente;
+    private Nodo<T> anterior;
 
     public Nodo(T dato) {
         this.dato = dato;
         this.siguiente = null;
+        this.anterior = null;
     }
 
+    public Nodo<T> getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(Nodo<T> anterior) {
+        this.anterior = anterior;
+    }
 
     public T getDato() {
         return dato;
@@ -22,5 +31,4 @@ public class Nodo<T>  {
         this.siguiente = siguiente;
     }
 
-   
 }

@@ -1,5 +1,3 @@
-import java.util.Iterator;
-
 import Pila.Nodo;
 
 public class BiCola<T>{
