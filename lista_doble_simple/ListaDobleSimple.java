@@ -25,6 +25,64 @@ public class ListaDobleSimple<T extends Comparable<T>> implements Iterable<T> {
         tamano++;
     }
 
+    public void ordenarAscendente(T dato) {
+        NodoDoble<T> nuevo = new NodoDoble<>(dato);
+        if (primero == null || nuevo.getDato().compareTo(primero.getDato()) < 0) {
+            nuevo.setSiguiente(primero);
+            if (primero != null) {
+                primero.setAnterior(nuevo);
+            }
+            primero = nuevo;
+            if (ultimo == null) {
+                ultimo = nuevo;
+            }
+        } else {
+            NodoDoble<T> actual = primero;
+            while (actual.getSiguiente() != null &&
+                    nuevo.getDato().compareTo(actual.getSiguiente().getDato()) > 0) {
+                actual = actual.getSiguiente();
+            }
+            nuevo.setSiguiente(actual.getSiguiente());
+            nuevo.setAnterior(actual);
+            if (actual.getSiguiente() != null) {
+                actual.getSiguiente().setAnterior(nuevo);
+            } else {
+                ultimo = nuevo;
+            }
+            actual.setSiguiente(nuevo);
+        }
+        tamano++;
+    }
+    
+    public void insertarOrdenNatural(T dato) {
+        NodoDoble<T> nuevo = new NodoDoble<>(dato);
+        if (primero == null || nuevo.getDato().compareTo(primero.getDato()) < 0) {
+            nuevo.setSiguiente(primero);
+            if (primero != null) {
+                primero.setAnterior(nuevo);
+            }
+            primero = nuevo;
+            if (ultimo == null) {
+                ultimo = nuevo;
+            }
+        } else {
+            NodoDoble<T> actual = primero;
+            while (actual.getSiguiente() != null &&
+                    nuevo.getDato().compareTo(actual.getSiguiente().getDato()) > 0) {
+                actual = actual.getSiguiente();
+            }
+            nuevo.setSiguiente(actual.getSiguiente());
+            nuevo.setAnterior(actual);
+            if (actual.getSiguiente() != null) {
+                actual.getSiguiente().setAnterior(nuevo);
+            } else {
+                ultimo = nuevo;
+            }
+            actual.setSiguiente(nuevo);
+        }
+        tamano++;
+    }
+
     public void agregarInicio(T dato) {
         NodoDoble<T> nuevo = new NodoDoble<>(dato);
         if (primero == null) {

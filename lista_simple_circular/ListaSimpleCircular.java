@@ -15,6 +15,29 @@ public class ListaSimpleCircular<T extends Comparable<T>> implements Iterable<T>
         this.tamano = 0;
     }
 
+    public void ordenarAscendente(Nodo<T> newNodo) {
+        if (primero == null) {
+            primero = ultimo = newNodo;
+            ultimo.setSiguiente(primero);
+        } else if (newNodo.getDato().compareTo(primero.getDato()) < 0) {
+            newNodo.setSiguiente(primero);
+            primero = newNodo;
+            ultimo.setSiguiente(primero);
+        } else {
+            Nodo<T> actual = primero;
+            while (actual.getSiguiente() != primero &&
+                    newNodo.getDato().compareTo(actual.getSiguiente().getDato()) > 0) {
+                actual = actual.getSiguiente();
+            }
+            newNodo.setSiguiente(actual.getSiguiente());
+            actual.setSiguiente(newNodo);
+            if (actual == ultimo) {
+                ultimo = newNodo;
+            }
+        }
+        tamano++;
+    }
+
     public void agregarNatural(Nodo<T> newNodo) {
         if (primero == null) {
             primero = ultimo = newNodo;

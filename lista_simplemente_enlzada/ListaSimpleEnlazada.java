@@ -12,6 +12,22 @@ public class ListaSimpleEnlazada<T extends Comparable<T>> implements Iterable<T>
         this.tamano = 0;
     }
 
+    public void ordenarAscendente(Nodo<T> newNodo) {
+        if (primero == null || newNodo.getDato().compareTo(primero.getDato()) < 0) {
+            newNodo.setSiguiente(primero);
+            primero = newNodo;
+        } else {
+            Nodo<T> actual = primero;
+            while (actual.getSiguiente() != null &&
+                    newNodo.getDato().compareTo(actual.getSiguiente().getDato()) > 0) {
+                actual = actual.getSiguiente();
+            }
+            newNodo.setSiguiente(actual.getSiguiente());
+            actual.setSiguiente(newNodo);
+        }
+        tamano++;
+    }
+
     public void agregarNatural(Nodo<T> newNodo) {
         if (primero == null || newNodo.getDato().compareTo(primero.getDato()) < 0) {
             newNodo.setSiguiente(primero);
